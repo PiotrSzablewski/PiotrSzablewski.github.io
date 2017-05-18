@@ -3,11 +3,11 @@
  */
 $(document).ready( function() {
     let contributorsArr =[];
-    let url = 'https://api.github.com/repos/angular/angular/contributors'+yourAuth;
+    let url = 'https://api.github.com/repos/angular/angular/contributors?client_id=bc5023d1f53e84b5a838&client_secret=709d05d3cec326a7ebe3d36791eeb5c8efa695d2';
     let usersArr = [];
     fetch( url ).then( response => response.json())
         .then( data => {
-            let auth = 'your auth';
+            let auth = '?client_id=bc5023d1f53e84b5a838&client_secret=709d05d3cec326a7ebe3d36791eeb5c8efa695d2';
             contributorsArr = data.map(item=>{
                 let contributions = item.contributions;
                 let id = item.id;
@@ -116,7 +116,7 @@ $(document).ready( function() {
 
     $('#users').on( 'click', '.userPanel', function ( user ) {
         let login = $( this ).find( 'div.col-md-9  span.login' ).text();
-        let auth = 'your auth';
+        let auth = '?client_id=bc5023d1f53e84b5a838&client_secret=709d05d3cec326a7ebe3d36791eeb5c8efa695d2';
         let $div = $( this ).closest("div.userPanel");
         $('<button>Close Repos</button>').addClass("btn btn-primary ").insertAfter($div);
 
