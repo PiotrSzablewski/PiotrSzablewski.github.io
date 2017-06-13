@@ -22,8 +22,8 @@ $(document).ready( function() {
 
     }).then( users => {
 
-        contributorsArr.forEach( function( obj1 ) {
-            users.forEach( function( obj ) {
+        contributorsArr.forEach( ( obj1 ) => {
+            users.forEach( ( obj ) => {
                 if ( obj1.id === obj.id ) {
                     Object.assign( obj, obj1 );
                 }
@@ -33,7 +33,7 @@ $(document).ready( function() {
         usersArr.push(users);
 
         /*building the html for users*/
-        $.each( users, function ( index, user ) {
+        $.each( users,  ( index, user ) => {
 
             $('#users').append(`
                     <div  class="panel panel-default userPanel">
