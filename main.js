@@ -1,6 +1,4 @@
-/**
- * Created by Piotr on 2017-03-29.
- */
+
 $(document).ready( function() {
     let contributorsArr =[];
     let url = 'https://api.github.com/repos/angular/angular/contributors?client_id=bc5023d1f53e84b5a838&client_secret=709d05d3cec326a7ebe3d36791eeb5c8efa695d2';
@@ -35,7 +33,7 @@ $(document).ready( function() {
         /*building the html for users*/
         $.each( users,  ( index, user ) => {
 
-            $('#users').append(`
+            $( '#users' ).append(`
                     <div  class="panel panel-default userPanel">
                         <div class="panel-heading">
                             <h1 class="panel-title"><strong>${user.name ? user.name : user.login}</strong></h1>
@@ -101,8 +99,8 @@ $(document).ready( function() {
             $( this ).appendTo( container );
         });
     }
-    $('#gists').click(function(){
-        reorderEl($('.userPanel').sort( sortByGists ));
+    $( '#gists' ).click(function(){
+        reorderEl($( '.userPanel' ).sort( sortByGists ));
     });
     $('#repos').click(function(){
         reorderEl($('.userPanel').sort( sortByRepos ));
